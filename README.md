@@ -2,9 +2,11 @@
 
 A custom Home Assistant integration for getAir smart ventilation systems (ComfortControl Pro / ComfortControl Pro BT).
 
+Made entirely by Claude.
+
 ## Installation
 
-### HACS (recommended)
+### HACS (recommended) (will do someday)
 1. Add this repo as a custom HACS repository
 2. Install "getAir Ventilation"
 3. Restart Home Assistant
@@ -36,6 +38,9 @@ A custom Home Assistant integration for getAir smart ventilation systems (Comfor
 - Turn on/off
 - Set speed via **percentage** (maps to getAir speed 0.5–4.0)
 
+### Time Profile (`select.DEVICE_NAME_time_profile`)
+- Select time profiles set in the app (Arbeitswoche | Freizeitwoche | Sommer) 
+
 ### Sensors
 | Sensor | Description |
 |--------|-------------|
@@ -43,7 +48,7 @@ A custom Home Assistant integration for getAir smart ventilation systems (Comfor
 | Indoor Humidity | Current indoor humidity (%) |
 | Outdoor Temperature | Outdoor temp (°C) |
 | Outdoor Humidity | Outdoor humidity (%) |
-| Indoor Air Quality | IAQ index (0–500) |
+| Indoor Air Quality | IAQ index (0–500) (Returns Unknown)|
 | Air Pressure | hPa |
 | Fan Speed | Raw speed value (0–4) |
 | Runtime | Total runtime (hours) |
@@ -51,6 +56,8 @@ A custom Home Assistant integration for getAir smart ventilation systems (Comfor
 | Firmware Version | Installed firmware |
 
 ## Notes
-- Data refreshes every 30 seconds
+- Data refreshes every 60 seconds (to prevent throttling)
 - Auth token is valid for 24 hours; the integration auto-refreshes it
 - Compatible devices: **ComfortControl Pro** and **ComfortControl Pro BT**
+- Credits to getAir for providing the API https://github.com/getaireu/REST-API
+- Credits to Claude for writing the Home Assistant Integration
